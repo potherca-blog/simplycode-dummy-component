@@ -1,124 +1,72 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <!-- Component CSS -->
-    <style>
-      
-    </style>
-    <!-- /Component CSS -->
-    <!-- Page CSS -->
-    <style>
-      
-    </style>
-    <!-- /Page CSS -->
-    <!-- Head HTML -->
-    
-    <!-- /Head HTML -->
-    <script>
-      var simplyDataApi = {};
-      var simplyApp = {};
-      window.addEventListener("simply-content-loaded", function() {
-        simply.bind = false;
-        /* Raw API */
-        var simplyRawApi = {
-          
-        };
-        /* End of Raw API */
-        /* Data API */
-        simplyDataApi = {
-          
-        };
-        /* End of Data API */
-        simplyApp = simply.app({
-          /* Actions */
-          actions: {
-            "sayHello" : function (subject) {
-              return new Promise(function (resolve, reject) {
-                resolve(`Hello ${subject}`)
-              })
-            }
-          },
-          /* /Actions */
-          /* Commands */
-          commands: {
-            "sayHello" : function (element) {
-              // @TODO: Subject should eventually come from the HTML element
-              const subject = 'World'
-              simplyApp.actions.sayHello(subject)
-                .then((message) => {
-                	alert(message)
-                })
-            }
-          },
-          /* /Commands */
-          /* Routes */
-          routes: {
-            "/" : function (params) {
-              editor.pageData.page = 'hello'
-            }
-          }
-          /* /Routes */
-        });
-      });
-      function clone(ob) {
-        return JSON.parse(JSON.stringify(ob));
-      }
-      function updateDataSource(name) {
-        document.querySelectorAll('[data-simply-data="'+name+'"]').forEach(function(list) {
-          editor.list.applyDataSource(list, name);
-          list.dataBindingPaused = 0;
-        });
-      }
-    </script>
-  </head>
-  <body>
-    <!-- Body HTML -->
-    
-    <!-- /Body HTML -->
-    <!-- Component HTML templates -->
-    <template id="dummy">
-      <button data-simply-command="sayHello">Say Hello</button>
-    </template>
-    <!-- /Component HTML templates -->
-    <header data-simply-path="/" data-simply-field="header" data-simply-content="template" data-simply-default-value="Header">
-      <template data-simply-template='Header' rel="header"></template>
-    </header>
-    <nav>
-      <div is="simply-component" rel="menu"></div>
-    </nav>
-    <div class="main" data-simply-field="page" data-simply-content="template">
-    <!-- Page HTML templates -->
-    <template data-simply-template="hello">
-      <simply-render rel="dummy"></simply-render>
-    </template>
-    <!-- /Page HTML templates -->
-    </div>
-    <script src="js/simply.everything.js"></script>
-    <script src="js/simply-edit.js" data-api-key="muze"></script>
-    <script>
-      /* Transformers */
-      editor.transformers = {
-        
-      };
-      /* /Transformers */
-    </script>
-    <script>
-      /* Sorters */
-      editor.sorters = {
-        
-      };
-      /* /Sorters */
-    </script>
-    <script>
-      window.addEventListener("simply-content-loaded", function() {
-        /* Data sources */
-        
-        /* /Data sources */
-      });
-    </script>
-    <!-- Foot HTML -->
-    
-    <!-- /Foot HTML -->
-  </body>
-</html>
+export default {
+	css: {
+		"componentCss": `
+			
+		`,
+		"pageCss": `
+			
+		`,
+	},
+	html : {
+		"headHtml": `
+			
+		`,
+		"bodyHtml": `
+			
+		`,
+		"footHtml": `
+			
+		`,
+		"componentTemplates": `
+			<template id="dummy">
+			  <button data-simply-command="sayHello">Say Hello</button>
+			</template>
+		`,
+		"pageTemplates": `
+		<div class="main" data-simply-field="page" data-simply-content="template">
+			<template data-simply-template="hello">
+			  <simply-render rel="dummy"></simply-render>
+			</template>
+		</div>`,
+	},
+	js: {
+		"simplyRawApi": {
+		  
+		},
+		"simplyDataApi": {
+		  
+		},
+		"simplyApp": {
+			"actions": {
+				"sayHello" : function (subject) {
+				  return new Promise(function (resolve, reject) {
+				    resolve(`Hello ${subject}`)
+				  })
+				} 
+			},
+			"commands": {
+				"sayHello" : function (element) {
+				  // @TODO: Subject should eventually come from the HTML element
+				  const subject = 'World'
+				  simplyApp.actions.sayHello(subject)
+				    .then((message) => {
+				    	alert(message)
+				    })
+				}
+			},
+			"routes": {
+				"/" : function (params) {
+				  editor.pageData.page = 'hello'
+				}
+			}
+		},
+		"transformers": {
+			
+		},
+		"sorters": {
+			
+		},
+		"dataSources": undefined
+			
+	}
+}
