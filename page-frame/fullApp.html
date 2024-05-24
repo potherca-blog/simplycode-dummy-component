@@ -1,55 +1,48 @@
 export default {
-	css: {
-		"componentCss": `
-			{{componentCss}}
-		`,
-		"pageCss": `
-			{{pageCss}}
-		`,
+	"componentCss": `
+		{{componentCss}}
+	`,
+	"pageCss": `
+		{{pageCss}}
+	`,
+	"headHtml": `
+		{{headHtml}}
+	`,
+	"bodyHtml": `
+		{{bodyHtml}}
+	`,
+	"footHtml": `
+		{{footHtml}}
+	`,
+	"componentTemplates": `
+		{{componentTemplates}}
+	`,
+	"pageTemplates": `
+		{{pageTemplates}}
+	`,
+	"simplyRawApi": {
+	  {{rawApi}}
 	},
-	html : {
-		"headHtml": `
-			{{headHtml}}
-		`,
-		"bodyHtml": `
-			{{bodyHtml}}
-		`,
-		"footHtml": `
-			{{footHtml}}
-		`,
-		"componentTemplates": `
-			{{componentTemplates}}
-		`,
-		"pageTemplates": `
-		<div class="main" data-simply-field="page" data-simply-content="template">
-			{{pageTemplates}}
-		</div>`,
+	"simplyDataApi": {
+	  {{dataApi}}
 	},
-	js: {
-		"simplyRawApi": {
-		  {{rawApi}}
+	"simplyApp": {
+		"actions": {
+			{{actions}} 
 		},
-		"simplyDataApi": {
-		  {{dataApi}}
+		"commands": {
+			{{commands}}
 		},
-		"simplyApp": {
-			"actions": {
-				{{actions}} 
-			},
-			"commands": {
-				{{commands}}
-			},
-			"routes": {
-				{{routes}}
-			}
-		},
-		"transformers": {
-			{{transformers}}
-		},
-		"sorters": {
-			{{sorters}}
-		},
-		"dataSources": undefined
-			{{dataSources}}
-	}
+		"routes": {
+			{{routes}}
+		}
+	},
+	"transformers": {
+		{{transformers}}
+	},
+	"sorters": {
+		{{sorters}}
+	},
+	"dataSources": undefined
+		{{dataSources}}
 }
