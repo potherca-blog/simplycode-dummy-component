@@ -28,7 +28,7 @@ The component can be found at: https://blog.pother.ca/simplycode-dummy-component
 
 The component was created as follows:
 
-1. <details><summary>A component was created with a command and an action</summary>
+1. <details><summary markdown="span">A component was created with a command and an action</summary>
 
    - Action: 
      ```js
@@ -48,13 +48,14 @@ The component was created as follows:
      ```html
      <button data-simply-command="sayHello">Say Hello</button>
      ```
+
     </details>
-2. <details><summary>A page was created with a route and HTML page</summary>
+2. <details><summary markdown="span">A page was created with a route and HTML page</summary>
 
    - The hello HTML contains a `<simply-render rel="hello"></simply-render>`
    - The route for `/` was set to "hello"
    </details>
-3. <details><summary>The page-frame was changed to output a JS Module</summary>
+3. <details><summary markdown="span">The page-frame was changed to output a JS Module</summary>
 
    ```handlebars
    export default {
@@ -106,13 +107,14 @@ The component was created as follows:
                {{dataSources}}
        }
    ```
+
    </details>
 
 This was all Simplycode compliant, thus a `generated.html` file was created.
 
 As the component is to be [consumed as ESM][5], it was copied to `index.js`.
 
-<details><summary>The final result</summary>
+<details><summary markdown="span">The final result</summary>
 
 ```js
 export default {
@@ -203,12 +205,12 @@ The app can be found at: https://blog.pother.ca/simplycode-dummy-app/generated.h
 
 The app was created as follows:
 
-1. <details><summary>A page was created with a route and HTML page</summary>
+1. <details><summary markdown="span">A page was created with a route and HTML page</summary>
 
    - The hello HTML contains a `<h1>This is an App</h1>`
    - The route for `/` was set to "home"
    </details>
-2. <details><summary>The page-frame was changed to allow us to prevent SimplyEdit from loading.</summary>
+2. <details><summary markdown="span">The page-frame was changed to allow us to prevent SimplyEdit from loading.</summary>
 
    This was done by (ab)using the `data-simply-storage` attribute.
    An event listener was added for a custom `simply-import-fired` event.
@@ -225,8 +227,9 @@ The app was created as follows:
    </script>
    <script src="js/simply-edit.js" data-api-key="muze" data-simply-storage="waitForImport"></script>
    ```
+
     </details>
-3. <details><summary>Import logic was added to the foot HTML of the application.</summary>
+3. <details><summary markdown="span">Import logic was added to the foot HTML of the application.</summary>
 
    It imports the component and adds the component's templates, actions, and commands to the app.
    It then fires the `simply-import-fired` event so SimplyEdit can continue loading.
@@ -251,11 +254,12 @@ The app was created as follows:
      editor.fireEvent('simply-import-fired', window)
    </script>
    ```
+
     </details>
 
 After this, the app route was changed from `home` to `hello` to load the component.
 
-<details><summary>The final result</summary>
+<details><summary markdown="span">The final result</summary>
 
 ```html
 <!DOCTYPE HTML>
